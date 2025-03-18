@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Basketball Central</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <h2>Create Account</h2>
+                <p>Join Basketball Central today</p>
+            </div>
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required 
+                           placeholder="Enter your full name">
+                    <span class="form-icon">👤</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="Enter your email">
+                    <span class="form-icon">📧</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Create a password"
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                    <span class="form-icon">🔒</span>
+                    <button type="button" class="toggle-password">👁️</button>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required 
+                           placeholder="Confirm your password">
+                    <span class="form-icon">🔒</span>
+                </div>
+                <div class="password-strength">
+                    <div class="strength-meter"></div>
+                    <p class="strength-text">Password strength: <span>weak</span></p>
+                </div>
+                <div class="form-group terms">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="auth-button">Create Account</button>
+                <div class="auth-separator">
+                    <span>OR</span>
+                </div>
+                <div class="social-login">
+                    <button type="button" class="social-button google">
+                        <img src="assets/google-icon.svg" alt="Google">
+                        Continue with Google
+                    </button>
+                </div>
+            </form>
+            <p class="auth-switch">
+                Already have an account? <a href="login.html">Sign in</a>
+            </p>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>

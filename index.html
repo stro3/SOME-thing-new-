@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Central - Your Ultimate Basketball Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#home" class="logo">Basketball Central</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#teams" class="nav-link">Teams</a></li>
+                <li><a href="#players" class="nav-link">Players</a></li>
+                <li><a href="#stats" class="nav-link">Stats</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#news" class="nav-link">News</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li class="user-profile-container">
+                    <div id="userProfileBtn" class="user-profile-btn">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="user-dropdown-content">
+                            <a href="login.html" id="loginLink"><i class="fas fa-sign-in-alt"></i> Login</a>
+                            <a href="signup.html" id="signupLink"><i class="fas fa-user-plus"></i> Sign Up</a>
+                            <a href="#" id="favoritesLink" style="display: none;"><i class="fas fa-heart"></i> My Favorites</a>
+                            <a href="#" id="logoutBtn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="headline">BASKETBALL <span class="highlight">CENTRAL</span></h1>
+                    <p class="tagline">Where Passion Meets Performance</p>
+                    <p class="hero-description">Get the latest stats, news, and highlights from your favorite NBA teams and players.</p>
+                    <div class="hero-buttons">
+                        <a href="#teams" class="btn primary-btn animate-up">Explore Teams</a>
+                        <a href="#stats" class="btn secondary-btn animate-up">View Stats</a>
+                    </div>
+                </div>
+                <div id="basketball-3d" class="basketball-3d">
+                    <div class="loading-overlay">
+                        <div class="loading-spinner"></div>
+                        <span>Loading 3D Model...</span>
+                    </div>
+                    <div class="interaction-hint">
+                        <span class="hint-text">Double-click to spin</span>
+                        <span class="hint-icon">🏀</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-particles"></div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="teams" class="teams-section">
+            <div class="container">
+                <h2 class="section-title">Featured Teams</h2>
+                <div class="teams-grid">
+                    <div class="team-card" data-team="warriors">
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=100" alt="Warriors">
+                        <div class="team-info">
+                            <h3>Golden State Warriors</h3>
+                            <p>Western Conference</p>
+                            <div class="team-overlay">
+                                <span class="view-details">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card" data-team="lakers">
+                        <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=800&q=100" alt="Lakers">
+                        <div class="team-info">
+                            <h3>Los Angeles Lakers</h3>
+                            <p>Western Conference</p>
+                            <div class="team-overlay">
+                                <span class="view-details">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card" data-team="celtics">
+                        <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=800&q=100" alt="Celtics">
+                        <div class="team-info">
+                            <h3>Boston Celtics</h3>
+                            <p>Eastern Conference</p>
+                            <div class="team-overlay">
+                                <span class="view-details">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card" data-team="nets">
+                        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=100" alt="Brooklyn Nets">
+                        <div class="team-info">
+                            <h3>Brooklyn Nets</h3>
+                            <p>Eastern Conference</p>
+                            <div class="team-overlay">
+                                <span class="view-details">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card" data-team="heat">
+                        <img src="https://images.unsplash.com/photo-1518407613690-d9fc990e795f?w=800&q=100" alt="Miami Heat">
+                        <div class="team-info">
+                            <h3>Miami Heat</h3>
+                            <p>Eastern Conference</p>
+                            <div class="team-overlay">
+                                <span class="view-details">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card" data-team="bucks">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=100" alt="Milwaukee Bucks">
+                        <div class="team-info">
+                            <h3>Milwaukee Bucks</h3>
+                            <p>Eastern Conference</p>
+                            <div class="team-overlay">
+                                <span class="view-details">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="players" class="players-section">
+            <div class="container">
+                <h2 class="section-title">Top Players</h2>
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="playerSearch" placeholder="Search for players...">
+                        <button id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="players-grid" id="playersGrid">
+                    <!-- Player cards will be dynamically loaded here -->
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=100" alt="Player">
+                        </div>
+                        <div class="player-info">
+                            <h3>LeBron James</h3>
+                            <p class="team-name">Los Angeles Lakers</p>
+                            <div class="player-stats">
+                                <div class="stat">
+                                    <span class="label">PPG</span>
+                                    <span class="value">25.7</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">RPG</span>
+                                    <span class="value">7.9</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">APG</span>
+                                    <span class="value">10.6</span>
+                                </div>
+                            </div>
+                            <button class="favorite-btn" data-id="1" data-type="player">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=800&q=100" alt="Player">
+                        </div>
+                        <div class="player-info">
+                            <h3>Stephen Curry</h3>
+                            <p class="team-name">Golden State Warriors</p>
+                            <div class="player-stats">
+                                <div class="stat">
+                                    <span class="label">PPG</span>
+                                    <span class="value">29.4</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">RPG</span>
+                                    <span class="value">5.2</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">APG</span>
+                                    <span class="value">6.3</span>
+                                </div>
+                            </div>
+                            <button class="favorite-btn" data-id="2" data-type="player">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=100" alt="Player">
+                        </div>
+                        <div class="player-info">
+                            <h3>Kevin Durant</h3>
+                            <p class="team-name">Phoenix Suns</p>
+                            <div class="player-stats">
+                                <div class="stat">
+                                    <span class="label">PPG</span>
+                                    <span class="value">27.3</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">RPG</span>
+                                    <span class="value">6.8</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">APG</span>
+                                    <span class="value">5.0</span>
+                                </div>
+                            </div>
+                            <button class="favorite-btn" data-id="3" data-type="player">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="load-more-container">
+                    <button id="loadMorePlayers" class="load-more-btn">Load More</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">Photo Gallery</h2>
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="gallery-item" data-src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1920&q=100">
+                        <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1920&q=100&fit=crop" 
+                             alt="Basketball Fans"
+                             srcset="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=640&q=100 640w,
+                                     https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1280&q=100 1280w,
+                                     https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1920&q=100 1920w"
+                             sizes="(max-width: 640px) 640px,
+                                    (max-width: 1280px) 1280px,
+                                    1920px"
+                             loading="eager">
+                    </div>
+                    <div class="gallery-item" data-src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1920&q=100">
+                        <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1920&q=100&fit=crop" 
+                             alt="Basketball Court"
+                             srcset="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=640&q=100 640w,
+                                     https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1280&q=100 1280w,
+                                     https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1920&q=100 1920w"
+                             sizes="(max-width: 640px) 640px,
+                                    (max-width: 1280px) 1280px,
+                                    1920px"
+                             loading="eager">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats" class="stats-section">
+            <div class="container">
+                <h2 class="section-title">Player Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Points Per Game</h3>
+                            <span class="stat-value">28.5</span>
+                        </div>
+                        <div class="stat-chart"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Assists</h3>
+                            <span class="stat-value">8.2</span>
+                        </div>
+                        <div class="stat-chart"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Rebounds</h3>
+                            <span class="stat-value">11.3</span>
+                        </div>
+                        <div class="stat-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="news-section">
+            <div class="container">
+                <h2 class="section-title">Latest News</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=100" alt="Basketball News">
+                        <div class="news-content">
+                            <h3>NBA Finals Preview</h3>
+                            <p>An in-depth look at the upcoming championship series...</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=800&q=100" alt="Team News">
+                        <div class="news-content">
+                            <h3>Trade Deadline Updates</h3>
+                            <p>Latest moves and deals from around the league...</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hoops Central is your premier destination for everything basketball. From live scores to player stats, we keep you connected to the game you love.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>20+</h3>
+                            <p>Teams</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1000+</h3>
+                            <p>Games</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50K+</h3>
+                            <p>Fans</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="teams" class="teams">
+        <div class="container">
+            <h2>Teams</h2>
+            <div class="team-grid">
+                <div class="team-card scroll-reveal">
+                    <span class="conference-badge western">Western</span>
+                    <img src="https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg" alt="Golden State Warriors" 
+                         onerror="this.src='assets/placeholder-team.svg'">
+                    <h3>Warriors</h3>
+                    <p>Golden State Warriors</p>
+                    <div class="team-stats">
+                        <div class="stat">
+                            <span class="number">7</span>
+                            <span class="label">Championships</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card scroll-reveal">
+                    <span class="conference-badge western">Western</span>
+                    <img src="https://cdn.nba.com/logos/nba/1610612747/global/L/logo.svg" alt="Los Angeles Lakers"
+                         onerror="this.src='assets/placeholder-team.svg'">
+                    <h3>Lakers</h3>
+                    <p>Los Angeles Lakers</p>
+                    <div class="team-stats">
+                        <div class="stat">
+                            <span class="number">17</span>
+                            <span class="label">Championships</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card scroll-reveal">
+                    <span class="conference-badge eastern">Eastern</span>
+                    <img src="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg" alt="Boston Celtics"
+                         onerror="this.src='assets/placeholder-team.svg'">
+                    <h3>Celtics</h3>
+                    <p>Boston Celtics</p>
+                    <div class="team-stats">
+                        <div class="stat">
+                            <span class="number">17</span>
+                            <span class="label">Championships</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <h2>Upcoming Games</h2>
+            <div class="schedule-filters">
+                <select id="teamFilter">
+                    <option value="">All Teams</option>
+                    <option value="Warriors">Warriors</option>
+                    <option value="Lakers">Lakers</option>
+                    <option value="Celtics">Celtics</option>
+                </select>
+                <select id="monthFilter">
+                    <option value="">All Months</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                </select>
+            </div>
+            <div class="schedule-grid">
+                <div class="game-card">
+                    <div class="game-teams">
+                        <span>Warriors</span>
+                        <span>vs</span>
+                        <span>Lakers</span>
+                    </div>
+                    <div class="game-info">
+                        <p><i class="far fa-calendar"></i> March 15, 2025</p>
+                        <p><i class="far fa-clock"></i> 7:30 PM EST</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Chase Center</p>
+                        <button class="book-ticket" data-game="warriors-lakers-0315">Book Tickets</button>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-teams">
+                        <span>Celtics</span>
+                        <span>vs</span>
+                        <span>Nets</span>
+                    </div>
+                    <div class="game-info">
+                        <p><i class="far fa-calendar"></i> March 18, 2025</p>
+                        <p><i class="far fa-clock"></i> 8:00 PM EST</p>
+                        <p><i class="fas fa-map-marker-alt"></i> TD Garden</p>
+                        <button class="book-ticket" data-game="celtics-nets-0318">Book Tickets</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <h2>Player Statistics</h2>
+            <div class="search-box">
+                <input type="text" id="playerSearch" placeholder="Search for a player...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="stats-table-container">
+                <table class="stats-table">
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Team</th>
+                            <th>PPG</th>
+                            <th>RPG</th>
+                            <th>APG</th>
+                            <th>FG%</th>
+                        </tr>
+                    </thead>
+                    <tbody id="statsBody">
+                        <tr>
+                            <td>Stephen Curry</td>
+                            <td>Warriors</td>
+                            <td>32.1</td>
+                            <td>5.5</td>
+                            <td>6.2</td>
+                            <td>48.2</td>
+                        </tr>
+                        <tr>
+                            <td>LeBron James</td>
+                            <td>Lakers</td>
+                            <td>28.4</td>
+                            <td>7.8</td>
+                            <td>8.1</td>
+                            <td>51.3</td>
+                        </tr>
+                        <tr>
+                            <td>Kevin Durant</td>
+                            <td>Suns</td>
+                            <td>29.7</td>
+                            <td>6.9</td>
+                            <td>5.5</td>
+                            <td>52.1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1920&q=100">
+                    <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1920&q=100&fit=crop" 
+                         alt="Basketball Fans"
+                         srcset="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=640&q=100 640w,
+                                 https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1280&q=100 1280w,
+                                 https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1920&q=100 1920w"
+                         sizes="(max-width: 640px) 640px,
+                                (max-width: 1280px) 1280px,
+                                1920px"
+                         loading="eager">
+                </div>
+                <div class="gallery-item" data-src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1920&q=100">
+                    <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1920&q=100&fit=crop" 
+                         alt="Basketball Court"
+                         srcset="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=640&q=100 640w,
+                                 https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1280&q=100 1280w,
+                                 https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1920&q=100 1920w"
+                         sizes="(max-width: 640px) 640px,
+                                (max-width: 1280px) 1280px,
+                                1920px"
+                         loading="eager">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="compare" class="compare">
+        <div class="container">
+            <h2>Team Comparison</h2>
+            <div class="comparison-tool">
+                <div class="team-selectors">
+                    <div class="team-select">
+                        <label>Team 1</label>
+                        <select id="team1Select">
+                            <option value="">Select Team</option>
+                            <option value="warriors">Golden State Warriors</option>
+                            <option value="lakers">Los Angeles Lakers</option>
+                            <option value="celtics">Boston Celtics</option>
+                        </select>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div class="team-select">
+                        <label>Team 2</label>
+                        <select id="team2Select">
+                            <option value="">Select Team</option>
+                            <option value="warriors">Golden State Warriors</option>
+                            <option value="lakers">Los Angeles Lakers</option>
+                            <option value="celtics">Boston Celtics</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="comparisonResult" class="comparison-result">
+                    <div class="stat-comparison">
+                        <div class="stat-row">
+                            <div class="team1-stat"></div>
+                            <div class="stat-label">Points Per Game</div>
+                            <div class="team2-stat"></div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="team1-stat"></div>
+                            <div class="stat-label">Rebounds</div>
+                            <div class="team2-stat"></div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="team1-stat"></div>
+                            <div class="stat-label">Assists</div>
+                            <div class="team2-stat"></div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="team1-stat"></div>
+                            <div class="stat-label">Win Rate</div>
+                            <div class="team2-stat"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courts" class="courts">
+        <div class="container">
+            <h2>Basketball Courts Near You</h2>
+            <div class="court-finder">
+                <div class="search-container">
+                    <input type="text" id="locationInput" placeholder="Enter your location">
+                    <button id="findCourts">Find Courts</button>
+                </div>
+                <div class="court-results">
+                    <div id="courtsMap"></div>
+                    <div id="courtsList" class="courts-list">
+                        <!-- Court listings will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="news">
+        <div class="container">
+            <h2>Latest News</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/300x200" alt="News 1">
+                    <div class="news-content">
+                        <h3>Championship Finals Approaching</h3>
+                        <p>Get ready for the most exciting matchup of the season as teams prepare for the finals.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/300x200" alt="News 2">
+                    <div class="news-content">
+                        <h3>Player of the Month Announced</h3>
+                        <p>Check out who won the prestigious Player of the Month award for their outstanding performance.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest basketball news and updates!</p>
+            <form id="newsletterForm" class="newsletter-form">
+                <input type="email" id="emailInput" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div id="subscriptionMessage"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hoops Central</h3>
+                    <p>Your ultimate basketball destination</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#teams">Teams</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#stats">Stats</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                        <li><a href="#compare">Compare</a></li>
+                        <li><a href="#courts">Courts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> info@hoopscentral.com</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hoops Central. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Team Modal Structure -->
+    <div class="team-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <div class="modal-body">
+                <!-- Content will be populated via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="3d-model.js"></script>
+    <script src="services.js"></script>
+    <script src="fix-clicks.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize 3D model and basketball service
+        document.addEventListener('DOMContentLoaded', () => {
+            init3DModel();
+            basketballService.startLiveUpdates();
+        });
+    </script>
+</body>
+</html>
